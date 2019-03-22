@@ -5,7 +5,8 @@ module.exports = {
     description: "Blog by Mindaugas Jačionis. Here JavaScript meets Humans.",
     siteUrl: "https://theiife.com",
     social: {
-      twitter: "@MJacionis"
+      twitter: "https://twitter.com/@MJacionis",
+      github: "https://github.com/mindaugas-jacionis"
     }
   },
   plugins: [
@@ -63,7 +64,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`
+        icon: `content/assets/logo.svg`
       }
     },
     `gatsby-plugin-offline`,
