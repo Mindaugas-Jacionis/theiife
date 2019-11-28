@@ -1,56 +1,59 @@
 module.exports = {
   siteMetadata: {
-    title: 'The IIFE',
-    author: 'Mindaugas Jačionis',
-    description: 'Blog by Mindaugas Jačionis. Here JavaScript meets Humans.',
-    siteUrl: 'https://theiife.com',
+    title: "The IIFE",
+    author: "Mindaugas Jačionis",
+    description: "Blog by Mindaugas Jačionis. Here JavaScript meets Humans.",
+    siteUrl: "https://theiife.com",
     social: {
-      twitter: 'https://twitter.com/@MJacionis',
-      github: 'https://github.com/mindaugas-jacionis',
-    },
+      twitter: "https://twitter.com/@MJacionis",
+      github: "https://github.com/mindaugas-jacionis"
+    }
   },
   plugins: [
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
+        name: `blog`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
+        name: `assets`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-relative-images`
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
-            },
+              maxWidth: 590
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
+          `gatsby-remark-smartypants`
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -58,7 +61,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -70,16 +73,16 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/logo.svg`,
-      },
+        icon: `content/assets/logo.svg`
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-  ],
+        pathToConfigModule: `src/utils/typography`
+      }
+    }
+  ]
 };
