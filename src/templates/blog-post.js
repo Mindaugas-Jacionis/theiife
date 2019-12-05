@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Bio from "../components/Bio";
-import Layout from "../components/Layout";
-import SEO from "../components/Seo";
-import { rhythm, scale } from "../utils/typography";
+import Bio from '../components/Bio';
+import Layout from '../components/Layout';
+import SEO from '../components/Seo';
+import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class BlogPostTemplate extends React.Component {
             ...scale(-1 / 5),
             display: `block`,
             marginBottom: rhythm(1),
-            marginTop: rhythm(-1)
+            marginTop: rhythm(-1),
           }}
         >
           {post.frontmatter.date}
@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
-            marginBottom: rhythm(1)
+            marginBottom: rhythm(1),
           }}
         />
         <Bio />
@@ -40,20 +40,34 @@ class BlogPostTemplate extends React.Component {
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0
+            padding: 0,
           }}
         >
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                <span
+                  style={{ marginRight: '18px', verticalAlign: 'middle' }}
+                  role="img"
+                  aria-label="Arrwo left"
+                >
+                  ⬅️
+                </span>
+                {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                {next.frontmatter.title}
+                <span
+                  style={{ marginLeft: '22px', verticalAlign: 'middle' }}
+                  role="img"
+                  aria-label="Arrwo right"
+                >
+                  ➡️
+                </span>
               </Link>
             )}
           </li>

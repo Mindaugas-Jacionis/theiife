@@ -12,6 +12,9 @@ Wordpress2016.overrideThemeStyles = () => {
     'a:hover': {
       color: '#b8b5f3',
     },
+    hr: {
+      background: '#f8f8fe',
+    },
     h1: {
       color: '#fff',
     },
